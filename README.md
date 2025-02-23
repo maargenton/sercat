@@ -14,7 +14,7 @@ path.
 Then, run the following command:
 
 ```sh
-go install github.com/maargenton/sercat@latest
+go install github.com/maargenton/sercat/cmd/sercat@latest
 ```
 
 To activate shell completion, either run the following command in your terminal sessions, or include it in your shell profile:
