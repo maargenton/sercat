@@ -6,6 +6,8 @@ import (
 	"io"
 	"os"
 	"os/signal"
+	"path"
+	"runtime/debug"
 	"strconv"
 	"sync"
 	"syscall"
@@ -32,7 +34,11 @@ type sercatCmd struct {
 }
 
 func (opts *sercatCmd) Version() string {
-	return "sercat v0.1.0"
+	var info, ok = debug.ReadBuildInfo()
+	if ok {
+		return fmt.Sprintf("%v %v", path.Base(info.Path), info.Main.Version)
+	}
+	return "sercat v0.0.0-devel"
 }
 
 func (opts *sercatCmd) Complete(opt *option.T, partial string) []string {

@@ -1,6 +1,6 @@
 module github.com/maargenton/sercat
 
-go 1.22.4
+go 1.24
 
 require (
 	github.com/maargenton/go-cli v0.5.1-0.20250222082047-b874b53573e1
